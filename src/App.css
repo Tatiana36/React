@@ -1,0 +1,29 @@
+.app-wrapper{
+    display: flex;
+    flex-direction: column;
+}
+.header-color{
+    background-color: forestgreen;
+}
+.app-header{
+    padding: 1%;
+    margin: 0 auto;
+    padding-left: 35%;
+    color: aqua;
+}
+.app-box{
+    display: flex;
+}
+.app-nav-box{
+    margin-top: 1%;
+    background-color: forestgreen;
+    width: 25%;
+}
+.app-nav{
+    margin-left: 25%;
+    color: aqua;
+}
+.app-form{
+    margin-left: 25%;
+
+}

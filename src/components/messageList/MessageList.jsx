@@ -1,36 +1,19 @@
-import React from "react";
-import { useState } from "react";
-
-const initialState = [
-    {author: 'Дмитрий', text: 'Привет'},
-    {author: 'Олег', text: 'Как дела?'},
-    {author: 'Карина', text: 'Я на море.'},
-    {author: 'Сергей', text: 'Пока.'},
-];
-
-
-function MessageList() {
-    const [messageList, setMessageList] = useState(initialState);
-
-    return(
-        <div>
-            {messageList.map((el) =>{
-                return  <Message key={el.author} item={el} />
-            })}
-        </div>
-
-    );
-}
-
-function Message(props) {
-    const { item } = props
+import PropTypes from 'prop-types'
+import classes from './MessageList.module.css'
+export function MessageList ({messages}) {
 
     return (
-        <div>
-            <p>Автор:{item.author}</p>
-            <p>Сообщение:{item.text}</p>
-        </div>
+        <>
+            <h1>Сообщение</h1>
+            <ul>
+                {messages.map((item, index) => (
+                    <li className={classes.li} key={index}>{item.text}</li>
+                ))}
+            </ul>
+        </>
     )
 }
 
-export default MessageList;
+MessageList.propTypes = {
+    messages: PropTypes.array
+}
