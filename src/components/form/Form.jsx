@@ -1,8 +1,9 @@
-import PropTypes from 'prop-types'
-import classes from './Form.module.css'
-import { useState } from 'react';
+import PropTypes from "prop-types";
+import classes from "./Form.module.css";
+import { useState } from "react";
 import {AUTHOR} from "../constants";
 import {Button} from "../button/Button";
+import IButton from "@mui/material/Button";
 
 export function Form({ addMessage }) {
     const [text, setText] = useState('')
@@ -28,8 +29,12 @@ export function Form({ addMessage }) {
                     value={text}
                     onChange={(event) => setText(event.target.value)}
                 />
-                <Button type="submit">Отправить</Button>
-
+                {/*<Button type="submit">Отправить</Button>*/}
+                <IButton
+                    type="submit"
+                    variant="contained"
+                    size="small"
+                    color="success">Отправить</IButton>
             </form>
 
         </>
