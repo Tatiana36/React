@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import classes from "./Form.module.css";
 import { useState } from "react";
 import {AUTHOR} from "../constants";
-import {Button} from "../button/Button";
+import {Button} from '../button/Button'
 import IButton from "@mui/material/Button";
 
 export function Form({ addMessage }) {

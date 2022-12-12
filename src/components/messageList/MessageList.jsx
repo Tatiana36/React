@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import classes from './MessageList.module.css'
-export function MessageList ({messages}) {
 
+export function MessageList ({messages}) {
     return (
         <>
             <h1>Сообщение</h1>
