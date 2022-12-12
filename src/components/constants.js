@@ -1,5 +1,5 @@
 export const AUTHOR = {
-    user: 'user',
-    bot: 'bot'
+    user: 'Пользователь',
+    bot: 'Бот'
 }
 

@@ -1,6 +1,8 @@
 .button{
-    margin-left: 10px;
-    background-color: forestgreen;
-    color: aqua;
-    border: forestgreen;
+    margin: 10px;
+    background-color: blue;
+    color: white;
+    border: blue;
+    padding: 3px;
+    border-radius: 10%;
 }

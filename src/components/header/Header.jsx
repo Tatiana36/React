@@ -1,9 +1,9 @@
-import React from 'react';
-import classes from './Header.module.css';
-import {Link} from "react-router-dom";
-import Main from '../pages/main/Main';
+import { Outlet, Link, NavLink } from 'react-router-dom';
 
-{/*export const navigate = [
+
+import styles from './Header.module.css'
+
+export const navigate = [
     {
         id: 1,
         name: 'Главная',
@@ -17,52 +17,35 @@ import Main from '../pages/main/Main';
     {
         id: 3,
         name: 'Чат',
-        to:'/chat'
-    }
-]*/}
+        to: '/chats'
+    },
+]
 
+export function Header() {
 
-
-{/*} function HeaderNav() {
     return (
-        <header className={classes.header}>
-            <nav>
-                <ul className={classes.headerUl}>
-                    {navigate.map((link) => (
-                        <li className={classes.headerLi}> key={link.id}>
-                            <link to={link.to}>
-                                {link.name}
-
-                            </link>
-                        </li>
-                    ))}
-                </ul>
-            </nav>
-        </header>
+        <>
+            <header>
+                <nav className={styles.header}>
+                    <ul className={styles.headerUl}>
+                        {navigate.map((link) => (
+                            <li className={styles.headerLi} key={link.id}>
+                                <NavLink
+                                    to={link.to}
+                                    style={({ isActive }) => ({
+                                        color: isActive ? 'white' : 'black'
+                                    })}
+                                >
+                                    {link.name}
+                                </NavLink>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+            </header>
+            <main className={styles.margin}>
+                <Outlet/>
+            </main>
+        </>
     )
-
-}  */}
-    function Header() {
-        return(
-            <nav className={classes.header}>
-                <ul className={classes.headerUl}>
-                    <li className={classes.headerLi}>
-                        <Link className={classes.headerA} to='/home'>Главная</Link>
-                    </li>
-                    <li className={classes.headerLi}>
-                        <Link className={classes.headerA} to='/profile'>Профиль</Link>
-                    </li>
-                    <li className={classes.headerLi}>
-                        <Link className={classes.headerA} to='/chat'>Чат</Link>
-                    </li>
-                </ul>
-            </nav>
-        )
-
-    }
-
-
-
-
-
-export default Header
+}
