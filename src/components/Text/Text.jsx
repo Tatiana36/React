@@ -2,12 +2,12 @@ import React, {useState} from "react";
 import style from "./Text.module.css"
 
 const Text = ()=> {
-    const [arr, setArr] = useState([{ txt: "Я уверенна что у меня все полусится!"}, {txt: "Спасибо за Ваш труд!!"}])
+    const [arr, setArr] = useState([{ txt: "Поделитесь своими новостями!"}, {txt: "Вперед!!"}])
     return(
         <>
             <div>
                 {arr.map((el) => (
-                    <p className={style.txt}>{el.txt}</p>
+                    <h3 className={style.txt}>{el.txt}</h3>
                     ))}
             </div>
         </>

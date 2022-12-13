@@ -7,7 +7,7 @@ const Message = ()=> {
     return(
         <>
             <div>
-                <p className={style.txt}>Я изучаю React</p>
+                <h1 className={style.txt}>Добро пожаловать в чат!</h1>
             </div>
             <Text />
             </>
