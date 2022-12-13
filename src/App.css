@@ -9,15 +9,16 @@
     padding: 1%;
     margin: 0 auto;
     padding-left: 35%;
-    color: aqua;
+    color: #00ffff;
 }
 .app-box{
     display: flex;
 }
 .app-nav-box{
     margin-top: 1%;
-    background-color: forestgreen;
+    background-color: #bd9f36;
     width: 25%;
+    border: 10px solid #00ffff  ;
 }
 .app-nav{
     margin-left: 25%;

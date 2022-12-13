@@ -1,13 +1,14 @@
 import PropTypes from 'prop-types'
-import classes from './MessageList.module.css'
-export function MessageList ({messages}) {
 
+export function MessageList ({messages}) {
     return (
         <>
-            <h1>Сообщение</h1>
+            <h1>Список сообщений</h1>
             <ul>
-                {messages.map((item, index) => (
-                    <li className={classes.li} key={index}>{item.text}</li>
+                {messages.map((message, index) => (
+                    <li key={index}>
+                        {message.author} : {message.text}
+                    </li>
                 ))}
             </ul>
         </>

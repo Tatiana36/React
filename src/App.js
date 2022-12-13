@@ -1,56 +1,67 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import { Form } from './components/form/Form'
-import { MessageList } from './components/messageList/MessageList'
-import { AUTHOR} from "./components/constants";
+import { Routes, Route } from 'react-router-dom'
+import { nanoid } from 'nanoid'
+import { Header } from './components/header/Header'
+import { Main } from './components/pages/main/Main'
+import { Profile} from './components/pages/profile/Profile'
+import { Chat } from './components/pages/chat/Chat'
+import { ChatList } from './components/chatList/ChatList'
+import { useState } from 'react'
 
+const degaultMessges = {
+    default: [
+        {
+            author: 'пользователь',
+            text: 'первое сообщение'
+        },
+        {
+            author: 'пользователь',
+            text: 'второе сообщение'
+        },
+    ]
+}
 
 export function App () {
-    const [messages, setMessages] = useState([])
+    const [messages, setMessages] = useState(degaultMessges)
 
-    const addMessage = (newMessage) => {
-        console.log('newMessage', newMessage);
-        setMessages([...messages, newMessage])
+    const chats = Object.keys(messages).map((chat) => ({
+        id: nanoid(),
+        name: chat
+    }))
+
+    const onAddChat = (newChat) => {
+        setMessages({
+            ...messages,
+            [newChat.name]: []
+        })
     }
 
-    useEffect(() => {
-        if (messages.length > 0 && messages[messages.length - 1].author === AUTHOR.user) {
-            const timeout = setTimeout(() => {
-                addMessage({
-                    author: AUTHOR.bot,
-                    text: 'Привет я бот'
-                })
-            }, 1500)
-
-            return () => {
-                clearTimeout(timeout)
-            }
-        }
-    }, [messages])
-
+    const onAddMessage = (chatId, newMassage) => {
+        setMessages({
+            ...messages,
+            [chatId]: [...messages[chatId], newMassage]
+        })
+    }
 
     return (
         <>
-            <div className='app-wrapper'>
-                <div className='header-color'>
-                    <h1 className='app-header'>Добро пожаловать в чат!</h1>
-                </div>
-                <div className='app-box'>
-                    <div className= 'app-nav-box'>
-                     <h3 className= 'app-nav'>
-                         Навигация
-                     </h3>
-                    </div>
-                    <div className='app-form'>
-                        <Form addMessage={addMessage} />
-                        <MessageList messages={messages} />
-                    </div>
+            <Routes>
+                <Route path='/' element={<Header />}>
+                    <Route index element={<Main />} />
+                    <Route path="profile" element={<Profile />} />
+                    <Route path="chats">
+                        <Route index element={<ChatList chats={chats} onAddChat={onAddChat} />} />
+                        <Route
+                            path=":chatId"
+                            element={<Chat chats={chats}
+                                                messages={messages}
+                                                onAddMessage={onAddMessage}
+                                                onAddChat={onAddChat} />}
+                        />
+                    </Route>
+                </Route>
 
-                </div>
-
-            </div>
+                <Route path="*" element={<h2>404 Page not FOUND</h2>} />
+            </Routes>
         </>
     )
 }
-
-export default App
