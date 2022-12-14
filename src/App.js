@@ -6,7 +6,6 @@ import { Profile} from './components/pages/profile/Profile'
 import { Chat } from './components/pages/chat/Chat'
 import { ChatList } from './components/chatList/ChatList'
 import { useState } from 'react'
-import styles from './App.css'
 
 const degaultMessges = {
     default: [
@@ -60,7 +59,6 @@ export function App () {
                         />
                     </Route>
                 </Route>
-
                 <Route path="*" element={<h2>404 Page not FOUND</h2>} />
             </Routes>
         </>

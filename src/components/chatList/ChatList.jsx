@@ -33,16 +33,21 @@ export function ChatList({onAddChat, chats}) {
                 ))}
             </ul>
 
-            <h1>Чаты</h1>
-            <form  onSubmit={handleSubmit}>
-                <input
-                    autoFocus
-                    type="text"
-                    value={value}
-                    onChange={handleChange}
-                />
-                <button type="submit" className={styles.button}>Создать чат</button>
-            </form>
+            <h1 className={styles.hCatList}>Чаты</h1>
+            <div className={styles.width}>
+                <form  onSubmit={handleSubmit}>
+                    <div className={styles.chatFlex}>
+                    <input
+                        autoFocus
+                        type="text"
+                        value={value}
+                        onChange={handleChange}
+                    />
+                    <button type="submit" className={styles.button}>Создать чат</button>
+                    </div>
+                </form>
+            </div>
+
 
         </>
     )

@@ -1,11 +1,13 @@
-
-
+import styles from './Main.module.css'
 
 export function Main () {
 
     return (
         <>
-            <h1>Добро пожаловать в чат!</h1>
+            <div className={styles.mainBox}>
+            <h1 className={styles.hTxt}>Добро пожаловать в чат!</h1>
+           </div>
+
         </>
     )
 }

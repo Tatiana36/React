@@ -1,8 +1,9 @@
-.form{
-    margin-left: 25%;
+
+.hForm{
+    text-align: center;
+    margin-top: 3%;
 }
-
-
-.input{
-
+.formFlex{
+    display: flex;
+    flex-direction: column;
 }
