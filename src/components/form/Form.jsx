@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { AUTHOR } from '../constants'
 import {Button} from '../button/Button'
 
@@ -23,6 +23,7 @@ export function Form({ addMessage }) {
             <h1>Форма</h1>
             <form onSubmit={handleSubmit}>
                 <input
+                    autoFocus
                     type="text"
                     value={text}
                     onChange={(event) => setText(event.target.value)}

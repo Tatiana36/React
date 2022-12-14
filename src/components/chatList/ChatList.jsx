@@ -36,6 +36,7 @@ export function ChatList({onAddChat, chats}) {
             <h1>Чаты</h1>
             <form  onSubmit={handleSubmit}>
                 <input
+                    autoFocus
                     type="text"
                     value={value}
                     onChange={handleChange}

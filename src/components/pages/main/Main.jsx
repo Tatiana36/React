@@ -5,7 +5,7 @@ export function Main () {
 
     return (
         <>
-            <h1>Welcome to HOME!</h1>
+            <h1>Добро пожаловать в чат!</h1>
         </>
     )
 }

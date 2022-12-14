@@ -6,6 +6,7 @@ import { Profile} from './components/pages/profile/Profile'
 import { Chat } from './components/pages/chat/Chat'
 import { ChatList } from './components/chatList/ChatList'
 import { useState } from 'react'
+import styles from './App.css'
 
 const degaultMessges = {
     default: [
@@ -52,7 +53,7 @@ export function App () {
                         <Route index element={<ChatList chats={chats} onAddChat={onAddChat} />} />
                         <Route
                             path=":chatId"
-                            element={<Chat chats={chats}
+                            element={<Chat   chats={chats}
                                                 messages={messages}
                                                 onAddMessage={onAddMessage}
                                                 onAddChat={onAddChat} />}
