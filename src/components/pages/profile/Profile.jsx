@@ -1,7 +1,7 @@
 export function Profile() {
     return (
         <>
-            <h1>ProfilePage</h1>
+            <h1>Профиль</h1>
         </>
     )
 }

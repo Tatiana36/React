@@ -52,14 +52,13 @@ export function App () {
                         <Route index element={<ChatList chats={chats} onAddChat={onAddChat} />} />
                         <Route
                             path=":chatId"
-                            element={<Chat chats={chats}
+                            element={<Chat   chats={chats}
                                                 messages={messages}
                                                 onAddMessage={onAddMessage}
                                                 onAddChat={onAddChat} />}
                         />
                     </Route>
                 </Route>
-
                 <Route path="*" element={<h2>404 Page not FOUND</h2>} />
             </Routes>
         </>

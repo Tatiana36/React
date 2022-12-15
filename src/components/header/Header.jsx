@@ -1,6 +1,4 @@
-import { Outlet, Link, NavLink } from 'react-router-dom';
-
-
+import { Outlet, NavLink } from 'react-router-dom';
 import styles from './Header.module.css'
 
 export const navigate = [
@@ -30,7 +28,7 @@ export function Header() {
                     <ul className={styles.headerUl}>
                         {navigate.map((link) => (
                             <li className={styles.headerLi} key={link.id}>
-                                <NavLink
+                                <NavLink className={styles.headerA}
                                     to={link.to}
                                     style={({ isActive }) => ({
                                         color: isActive ? 'white' : 'black'

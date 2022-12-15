@@ -1,6 +1,6 @@
 import { useEffect } from 'react'
 import { useParams, Navigate } from 'react-router-dom'
-
+import styles from './Chat.module.css'
 import { Form } from '../../form/Form'
 import { MessageList } from '../../messageList/MessageList'
 import { ChatList} from '../../chatList/ChatList'
@@ -44,10 +44,19 @@ export function Chat ({onAddChat, onAddMessage, messages, chats}) {
 
     return (
         <>
-            <h1>Добро пожаловать в чат</h1>
-            <ChatList chats={chats} onAddChat={onAddChat} />
-            <Form addMessage={handleAddMessage} />
-            <MessageList messages={chatId ? messages[chatId] : []} />
+
+                <h1 className={styles.hTxt}>Добро пожаловать в чат</h1>
+            <div className={styles.chatBox}>
+                <div>
+                    <ChatList chats={chats} onAddChat={onAddChat} />
+                </div>
+                <div>
+                    <Form addMessage={handleAddMessage} />
+                    <MessageList messages={chatId ? messages[chatId] : []} />
+                </div>
+
+            </div>
+
         </>
     )
 }
